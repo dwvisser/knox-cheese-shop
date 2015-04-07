@@ -17,7 +17,7 @@
 
 from say import say
 
-who = 'PyKnoxvillians'
+who = 'Pythonistas'
 where = 'the Cheese Shop'
 
 say('Hello, {who}.')
