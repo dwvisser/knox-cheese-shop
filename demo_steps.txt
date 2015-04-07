@@ -1,0 +1,60 @@
+Show how environments are prepped and do it
+===========================================
+* cd ~/Documents/MeetupTalks/PyKnoxville/
+* cat prep.sh
+* source prep.sh
+* tree -d pip_demo -L 4
+* pip help
+* pip list
+* pip show wheel
+
+Show off various distribution creations
+=======================================
+
+* cd git/
+* tree
+* cat setup.py
+* python setup.py sdist
+* tree
+* python setup.py bdist
+* tree
+* python setup.py bdist_egg
+* python setup.py bdist_wheel
+* tree
+* unzip -l dist/saywelcome-0.1.0-py2.7.egg
+* unzip -l dist/saywelcome-0.1.0-py2-none-any.whl
+                                                                                                                                                      
+Install the project from wheel, show virtualenv distribution
+============================================================
+
+* pip install dist/saywelcome-0.1.0-py2-none-any.whl
+* pip list
+* cd ..
+* tree -d pip_demo -L 4
+* cd /tmp
+* python -c "import saywelcome"
+
+Freeze requirements, and demonstrate installation into another venv
+===================================================================
+
+* cd -
+* pip freeze > requirements.txt
+* vi requirements.txt  # remove saywelcome line
+* pip wheel -r requirements.txt
+* ls wheelhouse/
+* deactivate
+* source wheel_demo/bin/activate
+* pip install --no-index --find-links=wheelhouse -r requirements.txt
+* cd git
+* python setup.py install | less # the other way to install
+* cd /tmp
+* python -c "import saywelcome"
+* cd -
+* cd ..
+* tree -d wheel_demo -L 4 # can't see saywelcome!
+* ls wheel_demo/lib/python2.7/site-packages # ahh. there it is. It's an .egg.
+
+Finally
+=======
+
+* deactivate
