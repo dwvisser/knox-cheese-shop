@@ -20,6 +20,7 @@ Show off various distribution creations
 * tree
 * python setup.py bdist_egg
 * python setup.py bdist_wheel
+* python setup.py bdist_wheel --universal
 * tree
 * unzip -l dist/saywelcome-0.1.0-py2.7.egg
 * unzip -l dist/saywelcome-0.1.0-py2-none-any.whl
