@@ -1,9 +1,13 @@
 Show how environments are prepped and do it
 ===========================================
-* cd ~/Documents/MeetupTalks/PyKnoxville/
+* git clone https://github.com/dwvisser/knox-cheese-shop.git
+* cd knox-cheese-shop
+* ./cleanup.sh (only if needed)
+* open knox-cheese-shop folder in sublime_text (or some other IDE-like editor) to monitor changes
 * cat prep.sh
 * source prep.sh
 * tree -d pip_demo -L 4
+* source pip_demo/bin/activate
 * pip help
 * pip list
 * pip show wheel
@@ -11,17 +15,12 @@ Show how environments are prepped and do it
 Show off various distribution creations
 =======================================
 
-* cd git/
-* tree
-* cat setup.py
+* show setup.py and saywelcome/main.py in sublime_text
 * python setup.py sdist
-* tree
 * python setup.py bdist
-* tree
 * python setup.py bdist_egg
 * python setup.py bdist_wheel
 * python setup.py bdist_wheel --universal
-* tree
 * unzip -l dist/saywelcome-0.1.0-py2.7.egg
 * unzip -l dist/saywelcome-0.1.0-py2-none-any.whl
                                                                                                                                                       
@@ -30,9 +29,8 @@ Install the project from wheel, show virtualenv distribution
 
 * pip install dist/saywelcome-0.1.0-py2-none-any.whl
 * pip list
-* cd ..
 * tree -d pip_demo -L 4
-* cd /tmp
+* cd ~
 * python -c "import saywelcome"
 
 Freeze requirements, and demonstrate installation into another venv
@@ -40,18 +38,17 @@ Freeze requirements, and demonstrate installation into another venv
 
 * cd -
 * pip freeze > requirements.txt
-* vi requirements.txt  # remove saywelcome line
+* edit requirements.txt in sublime_text to remove saywelcome line
 * pip wheel -r requirements.txt
-* ls wheelhouse/
+* expand wheelhouse folder in sublime_text
 * deactivate
 * source wheel_demo/bin/activate
+* pip list
 * pip install --no-index --find-links=wheelhouse -r requirements.txt
-* cd git
-* python setup.py install | less # the other way to install
-* cd /tmp
+* python setup.py install # the other way to install
+* cd ~
 * python -c "import saywelcome"
 * cd -
-* cd ..
 * tree -d wheel_demo -L 4 # can't see saywelcome!
 * ls wheel_demo/lib/python2.7/site-packages # ahh. there it is. It's an .egg.
 
