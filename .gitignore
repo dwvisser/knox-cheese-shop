@@ -4,3 +4,4 @@ dist/
 *.egg-info/
 *_demo/
 wheelhouse/
+requirements.txt

@@ -1,6 +1,8 @@
 #!/bin/bash
-rm -rf git/build/ git/dist/ git/saywelcome.egg-info/ pip_demo/ wheel_demo/ wheelhouse/
-rm requirements.txt
+#
+# Run using 'source' to preserve environment.
+#
+git clean -d -x -f
 virtualenv wheel_demo
 source wheel_demo/bin/activate
 pip install wheel
