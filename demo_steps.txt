@@ -2,7 +2,7 @@ Show how environments are prepped and do it
 ===========================================
 * git clone https://github.com/dwvisser/knox-cheese-shop.git
 * cd knox-cheese-shop
-* ./cleanup.sh (only if needed)
+* ./clean.sh (only if needed)
 * open knox-cheese-shop folder in sublime_text (or some other IDE-like editor) to monitor changes
 * cat prep.sh
 * source prep.sh
