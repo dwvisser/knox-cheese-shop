@@ -49,8 +49,7 @@ Freeze requirements, and demonstrate installation into another venv
 * cd ~
 * python -c "import saywelcome"
 * cd -
-* tree -d wheel_demo -L 4 # can't see saywelcome!
-* ls wheel_demo/lib/python2.7/site-packages # ahh. there it is. It's an .egg.
+* expand wheel_demo/lib/python2.7/site-packages # There's no saywelcome wheel! Oh, there it is: saywelcome-*.egg.
 
 Finally
 =======
